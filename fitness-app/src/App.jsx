@@ -11,8 +11,6 @@ import GifContainer from './components/gifContainer';
 
 function App() {
 
-
-
   const [data, setData] = useState([]);
   const [error, setError] = useState('');
 
