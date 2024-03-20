@@ -1,5 +1,10 @@
 import { useState, useEffect } from 'react'
-import './App.css'
+import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import NavBar from './components/nav-bar';
+import Home from './pages/Home';
+import About from './pages/about';
+import FitnessCatalog from './pages/fitness-catalog';
 import API_KEY from './config'
 import { handleFetch } from './utils';
 import GifContainer from './components/gifContainer';
@@ -40,17 +45,20 @@ function App() {
 
   console.log(data);
   return (
-    <>
-      <div className='App'>
+    <Router>
+      <div>
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/fitness-catalog' element={<FitnessCatalog />} />
+          <Route path='/about' element={<About />} />
+        </Routes>
         <h1>Exercise 1</h1>
-
-        <div>
-          <GifContainer gifs={data} />
-          <div />
+        <div><GifContainer gifs={data} />
         </div>
       </div>
-    </>
-  )
+    </Router>
+  );
 }
 
 export default App
