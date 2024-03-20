@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import API_KEY from './config'
 import { handleFetch } from './utils';
+import GifContainer from './components/gifContainer';
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
   useEffect(() => {
     const doFetch = async () => {
       const url =
-        'https://exercisedb.p.rapidapi.com/exercises/bodyPartList';
+        'https://exercisedb.p.rapidapi.com/exercises/bodyPart/chest?limit=10';
       const options = {
         method: "GET",
         headers: {
@@ -28,16 +29,7 @@ function App() {
         const response = await fetch(url, options);
         const result = await response.json();
         console.log(result)
-        // Trigger download
-        // if (result.message === '400') return
-        // const blob = new Blob([JSON.stringify(result, null, 2)], { type: 'application/json' });
-        // const href = URL.createObjectURL(blob);
-        // const link = document.createElement('a');
-        // link.href = href;
-        // link.download = "myExercises.json"; // or any other filename
-        // document.body.appendChild(link);
-        // link.click();
-        // document.body.removeChild(link);
+        setData(result)
       } catch (error) {
         console.error(error);
       }
@@ -49,8 +41,14 @@ function App() {
   console.log(data);
   return (
     <>
+      <div className='App'>
+        <h1>Exercise 1</h1>
 
-
+        <div>
+          <GifContainer gifs={data} />
+          <div />
+        </div>
+      </div>
     </>
   )
 }
