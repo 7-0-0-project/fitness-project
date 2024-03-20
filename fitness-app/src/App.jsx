@@ -5,6 +5,7 @@ import NavBar from './components/nav-bar';
 import Home from './pages/Home';
 import About from './pages/about';
 import FitnessCatalog from './pages/fitness-catalog';
+
 function App() {
   return (
     <Router>
