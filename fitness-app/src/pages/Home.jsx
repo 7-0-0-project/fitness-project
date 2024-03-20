@@ -1,7 +1,13 @@
 import NavBar from "../components/nav-bar";
-
-export default function Home() {
+import GifContainer from "../components/gifContainer";
+import App from "../App";
+function Home() {
     return (
-        <div></div>
+        <>
+            {/* <h1>Exercise 1</h1>
+            <div><GifContainer gifs={data} />
+            </div> */}
+        </>
     )
 }
+export default Home
