@@ -46,17 +46,12 @@ function App() {
   console.log(data);
   return (
     <Router>
-      <div>
-        <NavBar />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/fitness-catalog' element={<FitnessCatalog />} />
-          <Route path='/about' element={<About />} />
-        </Routes>
-        <h1>Exercise 1</h1>
-        <div><GifContainer gifs={data} />
-        </div>
-      </div>
+      <NavBar />
+      <Routes>
+        <Route path='/' element={<Home data={data} />} />
+        <Route path='/fitness-catalog' element={<FitnessCatalog />} />
+        <Route path='/about' element={<About />} />
+      </Routes>
     </Router>
   );
 }
