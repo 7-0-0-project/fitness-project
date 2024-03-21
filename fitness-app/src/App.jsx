@@ -47,7 +47,6 @@ function App() {
     <Router>
       <NavBar />
       <Routes>
-        {/* <Route path='/' element={<Home data={data} />} /> */}
         <Route path='/' element={<Buttons bodyParts={data} />} />
         <Route path='/fitness-catalog' element={<FitnessCatalog />} />
         <Route path='/about' element={<About />} />
