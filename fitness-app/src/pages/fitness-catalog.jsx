@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import GifContainer from '../components/gifContainer';
+import { API_KEY } from '../../config';
 
 function FitnessCatalog() {
     const [name, setName] = useState('');
@@ -17,7 +18,7 @@ function FitnessCatalog() {
             const options = {
                 method: 'GET',
                 headers: {
-                    'X-RapidAPI-Key': '36dd3cd46dmsheb990f286d91c4ap105ac5jsne5812b52a8d9',
+                    'X-RapidAPI-Key': API_KEY,
                     'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com',
                 },
             };
