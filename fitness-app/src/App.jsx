@@ -43,14 +43,48 @@ function App() {
   }, []);
 
   console.log(data);
+
+  useEffect(() => {
+    const fetchExercises = async () => {
+      if (bodyPart) {
+        const url = `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`;
+        const options = {
+          method: 'GET',
+          headers: {
+            'X-RapidAPI-Key': "36dd3cd46dmsheb990f286d91c4ap105ac5jsne5812b52a8d9", // Replace with your actual API key
+            'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com',
+          },
+        };
+
+        try {
+          const response = await fetch(url, options);
+          if (response.ok) {
+            const result = await response.json();
+            // Handle the fetched exercises data here
+          } else {
+            console.error('Failed to fetch exercises:', response.statusText);
+            setError('Failed to fetch exercises.');
+          }
+        } catch (error) {
+          console.error('Error fetching exercises:', error);
+          setError('Error fetching exercises.');
+        }
+      }
+    };
+
+    fetchExercises();
+  }, [bodyPart]); // Fetch exercises whenever bodyPart changes
+
   return (
     <Router>
       <NavBar />
       <Routes>
-        {/* <Route path='/' element={<Home data={data} />} /> */}
-        <Route path='/' element={<Buttons bodyParts={data} />} />
-        <Route path='/fitness-catalog' element={<FitnessCatalog />} />
-        <Route path='/about' element={<About />} />
+        <Route
+          path="/"
+          element={<Buttons bodyParts={data} setBodyPart={setBodyPart} />}
+        />
+        <Route path="/fitness-catalog" element={<FitnessCatalog />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </Router>
   );
