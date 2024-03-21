@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import GifContainer from "./gifContainer";
+import { API_KEY } from "../../config";
 
 function Buttons({ bodyParts }) {
 
@@ -23,7 +24,7 @@ function Buttons({ bodyParts }) {
         try {
             const response = await fetch(url, {
                 headers: {
-                    "X-RapidAPI-Key": "36dd3cd46dmsheb990f286d91c4ap105ac5jsne5812b52a8d9",
+                    "X-RapidAPI-Key": API_KEY,
                     "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
                 }
             });
