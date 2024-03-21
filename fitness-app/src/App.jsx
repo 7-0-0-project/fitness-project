@@ -8,10 +8,9 @@ import FitnessCatalog from './pages/fitness-catalog';
 import API_KEY from './config'
 import { handleFetch } from './utils';
 import GifContainer from './components/gifContainer';
+import Buttons from './components/Buttons';
 
 function App() {
-
-
 
   const [data, setData] = useState([]);
   const [error, setError] = useState('');
@@ -20,7 +19,7 @@ function App() {
   useEffect(() => {
     const doFetch = async () => {
       const url =
-        'https://exercisedb.p.rapidapi.com/exercises/bodyPart/chest?limit=10';
+        'https://exercisedb.p.rapidapi.com/exercises/bodyPartList';
       const options = {
         method: "GET",
         headers: {
@@ -48,7 +47,7 @@ function App() {
     <Router>
       <NavBar />
       <Routes>
-        <Route path='/' element={<Home data={data} />} />
+        <Route path='/' element={<Buttons bodyParts={data} />} />
         <Route path='/fitness-catalog' element={<FitnessCatalog />} />
         <Route path='/about' element={<About />} />
       </Routes>
