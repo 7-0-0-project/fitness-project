@@ -79,12 +79,9 @@ function App() {
     <Router>
       <NavBar />
       <Routes>
-        <Route
-          path="/"
-          element={<Buttons bodyParts={data} setBodyPart={setBodyPart} />}
-        />
-        <Route path="/fitness-catalog" element={<FitnessCatalog />} />
-        <Route path="/about" element={<About />} />
+        <Route path='/' element={<Buttons bodyParts={data} />} />
+        <Route path='/fitness-catalog' element={<FitnessCatalog />} />
+        <Route path='/about' element={<About />} />
       </Routes>
     </Router>
   );
