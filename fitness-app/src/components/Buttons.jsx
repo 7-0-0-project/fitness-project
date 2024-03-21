@@ -51,7 +51,7 @@ function Buttons({ bodyParts }) {
             <h2>Choose a muscle group:</h2>
             <div>
                 {bodyParts.map((bodyPart, index) => (
-                    <button key={index} onClick={() => handleButtonClick(bodyPart)}>
+                    <button className="button" key={index} onClick={() => handleButtonClick(bodyPart)}>
                         {bodyPart}
                     </button>
                 ))}

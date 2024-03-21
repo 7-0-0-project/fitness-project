@@ -56,6 +56,17 @@ body {
   background-color: #252525;
   text-decoration: none;
   list-style: none;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  list-style: none;
+}
+
+.card li {
+  width: 100%;
+  color: white;
+  font-size: small;
 }
 
 .button {
@@ -63,5 +74,37 @@ body {
   align-self: auto;
   margin: .8%;
   font-size: large;
-  background-color: #656;
+  background-color: rgba(255, 0, 0, 0.719);
+  color: white;
+
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  /* #007bff */
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
+
+.button:hover {
+  background-color: red;
+}
+
+/* #0056b3 */
+
+.button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.title {
+  color: white;
+  font-size: large;
+  /* font-weight: bold; */
+
+}
+
+/* #656 */

@@ -6,7 +6,7 @@ function GifContainer({ gifs }) {
         <ul className="card">
             {gifs.map((exercise) => (
                 <li key={exercise.id}>
-                    <h2>{exercise.name.toUpperCase()}</h2>
+                    <h2 className="title">{exercise.name.toUpperCase()}</h2>
                     <img src={exercise.gifUrl} alt={exercise.name} />
                     <p>{exercise.instructions.join(" ")}</p>
                 </li>
