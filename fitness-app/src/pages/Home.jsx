@@ -7,7 +7,6 @@ function Home({ data }) {
             <div><GifContainer gifs={data} />
             </div> */}
 
-
         </>
     )
 }

@@ -60,7 +60,7 @@ function App() {
           const response = await fetch(url, options);
           if (response.ok) {
             const result = await response.json();
-            // Handle the fetched exercises data here
+
           } else {
             console.error('Failed to fetch exercises:', response.statusText);
             setError('Failed to fetch exercises.');
@@ -73,7 +73,7 @@ function App() {
     };
 
     fetchExercises();
-  }, [bodyPart]); // Fetch exercises whenever bodyPart changes
+  }, []);
 
   return (
     <Router>
