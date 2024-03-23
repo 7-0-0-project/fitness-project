@@ -41,16 +41,13 @@ function Buttons({ bodyParts }) {
         fetchData(url);
     };
 
-
-
-
     return (
         <div>
-            <h1>Welcome to Fitness Catalog</h1>
+            <h1>Welcome to Explore Fitness</h1>
             <h2>Choose a muscle group:</h2>
             <div>
                 {bodyParts.map((bodyPart, index) => (
-                    <button key={index} onClick={() => handleButtonClick(bodyPart)}>
+                    <button className="button" key={index} onClick={() => handleButtonClick(bodyPart)}>
                         {bodyPart}
                     </button>
                 ))}
