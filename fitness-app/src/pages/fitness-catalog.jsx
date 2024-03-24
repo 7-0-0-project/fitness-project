@@ -41,14 +41,15 @@ function FitnessCatalog() {
     return (
         <div>
             <h1>Fitness Catalog</h1>
-            <form onSubmit={handleSearch}>
+            <form onSubmit={handleSearch} className="search-form-container">
                 <input
                     type="text"
                     placeholder="Search exercises"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
+                    className="search-input"
                 />
-                <button type="submit">Search</button>
+                <button type="submit" className='search-button'>Search</button>
             </form>
             {loading && <p>Loading...</p>}
             {error && <p>{error}</p>}

@@ -4,7 +4,9 @@ export default function NavBar() {
 
     return (< nav className="nav" >
         <Link to="/" className="site-title">
-            ExploreFitness
+            <div className="logo">
+                ExploreFitness
+            </div>
         </Link>
         <ul>
             <Link to="/fitness-catalog">FitnessCatalog</Link>
