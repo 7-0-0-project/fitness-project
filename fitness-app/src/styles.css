@@ -155,3 +155,7 @@ body {
 .search-button:hover {
   background-color: #740615;
 }
+
+.goku-img {
+  width: 15%;
+}
