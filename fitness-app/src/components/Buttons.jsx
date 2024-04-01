@@ -42,9 +42,6 @@ function Buttons({ bodyParts }) {
         fetchData(url);
     };
 
-
-
-
     return (
         <div className="main-page-text">
             <h1>Welcome to ExploreFitness</h1>

@@ -15,7 +15,6 @@ function App() {
   const [data, setData] = useState([]);
   const [error, setError] = useState('');
 
-  //fetch data
   useEffect(() => {
     const doFetch = async () => {
       const url =
@@ -31,6 +30,7 @@ function App() {
 
       try {
         const response = await fetch(url, options);
+        console.log(response)
         const result = await response.json();
         console.log(result)
         setData(result)
